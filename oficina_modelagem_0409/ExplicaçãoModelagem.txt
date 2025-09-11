@@ -1,0 +1,26 @@
+Explicação
+
+
+Entidade Aluno
+1 -Na entidade Aluno e pra representar os estudantes que realizaram as matriculas
+ID_aluno : chave primaria
+CPF
+NOME
+
+Entidade Matrícula
+2 -Representação da inscrição do aluno na Turma
+ID_Matricula : chave primaria
+Pertencendo a um único Aluno e ligado a uma única Turma
+
+Entidade Turma
+3 -Representa os alunos que estão matriculados
+a turma pode ter varias matriculas 
+mas cada turma pertence apenas a um curso
+
+Entidade Curso
+4 -Seria o curso oferecido pela escola
+Um curso pode ter várias turmas mas cada curso só tem apenas UM professor 
+
+Entidade Professor
+5 - São os professores que ministram os cursos
+os professores podem ministrar vários cursos mas cada curso só e ministrado por UM professor
