@@ -136,3 +136,16 @@ SELECT status, COUNT(*) AS total_veiculos FROM Veiculo GROUP BY status;
 SELECT status, COUNT(*) AS total_alugueis FROM Aluguel GROUP BY status;
 SELECT metodo, SUM(valor) AS total_pago FROM Pagamento GROUP BY metodo;
 SELECT id_veiculo, AVG(custo) AS media_custo FROM Manutencao GROUP BY id_veiculo;
+
+
+
+SELECT a.id_aluguel, c.nome AS cliente, v.modelo AS veiculo, a.data_inicio, a.data_fim
+FROM Aluguel a
+INNER JOIN Cliente c ON a.id_cliente = c.id_cliente
+INNER JOIN Veiculo v ON a.id_veiculo = v.id_veiculo;
+
+
+SELECT v.placa, v.modelo, m.descricao_servico, m.data_manutencao
+FROM Veiculo v
+LEFT JOIN Manutencao m ON v.id_veiculo = m.id_veiculo
+ORDER BY v.id_veiculo, m.data_manutencao DESC;
