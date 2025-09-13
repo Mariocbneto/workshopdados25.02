@@ -16,3 +16,12 @@ SOMA DOS PAGAMENTOS
 12/09/2025 - 
 ALUGUEIS DE INFORMAÇÃO DO VEICULO E DOS CLIENTES 
 E TODOS OS VEICULOS E SUAS MANUTENCAO CASO TENHA 
+
+
+SELECT COUNT(*) FROM Cliente;  Permite avaliar o crescimento da base de clientes ao longo do tempo
+SELECT status, COUNT(*) FROM Veiculo GROUP BY status; Ajuda a verificar se há veículos suficientes disponíveis para novos aluguéis e a planejar a aquisição de novos carros
+SELECT status, COUNT(*) FROM Aluguel GROUP BY status; Permite acompanhar aluguéis em andamento e identificar atrasos para tomar ações de cobrança ou renegociação
+SELECT metodo, SUM(valor) FROM Pagamento GROUP BY metodo; Mostra quais métodos são mais usados, ajudando a planejar promoções ou incentivos para métodos mais baratos de processamento
+SELECT id_veiculo, AVG(custo) FROM Manutencao GROUP BY id_veiculo; Ajuda a identificar quais veículos têm custo de manutenção mais alto e planejar a substituição ou venda dos mais caros
+INNER JOIN Aluguel + Cliente + Veiculo  Permite ao gestor saber exatamente quais clientes estão com quais carros
+LEFT JOIN Veiculo + Manutencao  Permite identificar se algum veículo está há muito tempo sem manutenção e planejar revisões preventivas.
